@@ -1,0 +1,32 @@
+This contract is an implementation of the ERC-20 token standard on the StarkNet platform, which is a layer-2 scaling solution for Ethereum. Here's a breakdown of the different components and functionalities of the contract:
+
+Events:
+Transfer: This event is emitted when tokens are transferred from one address to another.
+
+Parameters: from_ (sender's address), to (recipient's address), value (number of tokens transferred).
+Approval: This event is emitted when one address approves another to spend tokens on its behalf.
+
+Parameters: owner (address that approves), spender (address that is approved), value (number of tokens approved).
+Storage Variables:
+ERC20_name: Stores the name of the ERC-20 token.
+ERC20_symbol: Stores the symbol of the ERC-20 token (like a stock ticker symbol).
+ERC20_decimals: Stores the number of decimal places the token supports (in the range of 0 to 256).
+ERC20_total_supply: Stores the total supply of the ERC-20 token.
+ERC20_balances: Maps addresses to their respective token balances.
+ERC20_allowances: Allows addresses to spend tokens on behalf of another address.
+Constructor:
+The ERC20_initializer function is the constructor of the contract. It initializes the contract with the provided name, symbol, and decimal values. It ensures that the decimal value is within the valid range of 0 to 256.
+
+Getter Functions (View Functions):
+name: Returns the name of the ERC-20 token.
+symbol: Returns the symbol of the ERC-20 token.
+totalSupply: Returns the total supply of the ERC-20 token.
+decimals: Returns the number of decimal places the token supports.
+balanceOf: Takes an address as a parameter and returns the token balance of that address.
+allowance: Takes two addresses as parameters (owner and spender) and returns the amount of tokens the spender is allowed to spend on behalf of the owner.
+Internal Functions:
+ERC20_mint: Mints new tokens and assigns them to a recipient. It checks for potential overflow conditions before minting new tokens.
+ERC20_transfer: Transfers tokens from the sender to a recipient. It also checks for the sender's balance to ensure there are enough tokens to transfer.
+ERC20_approve: Approves another address to spend tokens on behalf of the caller. It sets the allowance for the spender.
+ERC20_burn: Burns (destroys) tokens from a specific account. It checks for potential underflow conditions before burning tokens.
+Overall, this contract provides a basic implementation of an ERC-20 token with functionalities for transferring tokens, approving spending limits for other addresses, minting new tokens, and burning existing tokens.

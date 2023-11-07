@@ -1,0 +1,6 @@
+In this completed contract:
+
+The CustomToken contract implements the IERC20 interface, providing the necessary functions and state variables.
+The constructor function initializes the token with a specified name, symbol, and initial supply, distributing the initial supply to the contract deployer.
+The transfer, approve, and transferFrom functions are implemented with appropriate checks for balances and allowances, ensuring that transfers and approvals are handled correctly.
+The contract emits Transfer and Approval events as required by the ERC-20 standard.
